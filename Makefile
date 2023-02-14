@@ -1,4 +1,7 @@
 # github commands
+config:
+	git config branch.develop.remote
+
 branch:
 	git branch
 
@@ -31,3 +34,9 @@ reset:
 
 fetch:
 	git fetch master
+
+upstream:
+	git branch -vv
+
+parent_braqnch:
+	git branch develop -u master
