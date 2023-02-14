@@ -8,6 +8,9 @@ add_branch:
 checkout:
 	git checkout -b develop
 
+push:
+	git push -u origin develop
+
 merge:
 	git checkout master
 	git merge develop
