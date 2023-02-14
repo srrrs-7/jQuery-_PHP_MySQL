@@ -20,7 +20,7 @@ update:
 	git merge master
 
 delete:
-	git branch -d develop
+	git branch -D develop
 
 reset:
 	git reset --hard
