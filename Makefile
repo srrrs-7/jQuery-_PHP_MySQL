@@ -14,6 +14,7 @@ push:
 merge:
 	git checkout master
 	git merge develop
+# :wq
 
 pull:
 	git pull master
