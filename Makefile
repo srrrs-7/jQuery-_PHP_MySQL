@@ -1,3 +1,4 @@
+
 # github commands
 config:
 	git config branch.develop.remote
@@ -58,3 +59,8 @@ email:
 
 credential:
 	git config --global credential.helper cache
+
+
+# docker commands
+compose:
+	doxker-compose up -d
