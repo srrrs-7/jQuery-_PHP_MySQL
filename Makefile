@@ -1,4 +1,7 @@
 # github commands
+config:
+	git config branch.develop.remote
+
 branch:
 	git branch
 
@@ -31,3 +34,27 @@ reset:
 
 fetch:
 	git fetch master
+
+upstream:
+	git branch -vv
+
+parent_braqnch:
+	git branch develop -u master
+
+head:
+	git reflog
+
+log:
+	git log
+
+tag:
+	git tag -a version1
+
+env:
+	git config -l
+
+email:
+	git config --global user.email "srrrs4510@gmail.com"
+
+credential:
+	git config --global credential.helper cache
