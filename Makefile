@@ -1,7 +1,4 @@
 # github commands
-config:
-	git config branch.develop.remote
-
 branch:
 	git branch
 
@@ -41,14 +38,21 @@ upstream:
 parent_braqnch:
 	git branch develop -u master
 
+tag:
+	git tag -a version1
+
+# setting
+config:
+	git config branch.develop.remote
+
+show:
+	git show
+
 head:
 	git reflog
 
 log:
-	git log
-
-tag:
-	git tag -a version1
+	git log -p
 
 env:
 	git config -l
@@ -58,3 +62,6 @@ email:
 
 credential:
 	git config --global credential.helper cache
+
+diff:
+	git diff --staged
