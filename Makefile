@@ -64,4 +64,4 @@ credential:
 	git config --global credential.helper cache
 
 diff:
-	git diff --staged
+	git diff
