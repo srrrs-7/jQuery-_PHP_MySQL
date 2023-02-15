@@ -54,6 +54,9 @@ head:
 log:
 	git log -p
 
+graph:
+	git log --graph --oneline --all
+
 env:
 	git config -l
 
@@ -65,3 +68,16 @@ credential:
 
 diff:
 	git diff
+
+revert_head:
+	git revert -e HEAD
+
+revert:
+	git revert -e [打ち消したいコミットID]
+
+revert_merge:
+	git revert -m [打ち消したいコミットID]
+
+revert_commit:
+	git revert -n [打ち消したいコミットID]
+
