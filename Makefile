@@ -40,3 +40,21 @@ upstream:
 
 parent_braqnch:
 	git branch develop -u master
+
+head:
+	git reflog
+
+log:
+	git log
+
+tag:
+	git tag -a version1
+
+env:
+	git config -l
+
+email:
+	git config --global user.email "srrrs4510@gmail.com"
+
+credential:
+	git config --global credential.helper cache
