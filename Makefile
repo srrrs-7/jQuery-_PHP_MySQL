@@ -34,7 +34,8 @@ head:
 log:
 	git log
 tag:
-	git tag -a version1
+	git tag -a ver1
+	git push origin ver1
 env:
 	git config -l
 email:
