@@ -1,16 +1,6 @@
 version: "3.9"
 
 services:
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./proxy/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./proxy/certs:/etc/ssl/certs
-      - ./src/html:/usr/share/nginx/html
-
   mysql:
     container_name: mysql
     image: mysql:8.0
@@ -19,6 +9,8 @@ services:
     ports:
       - 3306:3306
     environment:
+      - VIRTUAL_HOST=mysql.local.localhost
+      - CERT_NAME=_woldcard.local.localhost
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=test
       - MYSQL_USER=test
@@ -30,17 +22,18 @@ services:
       - mysql
     image: phpmyadmin
     environment:
-      PMA_HOST: mysql
+      - VIRTUAL_HOST=phpadmin.local.localhost
+      - CERT_NAME=_woldcard.local.localhost
+      - PMA_HOST=mysql
     restart: always
-    ports:
-      - 8000:80
 
   php:
     container_name: php-apache
     build: ./php
+    environment:
+      - VIRTUAL_HOST=php.local.localhost
+      - CERT_NAME=_woldcard.local.localhost
     volumes:
       - ./src/php:/var/www/html
-    ports:
-      - 8080:80
     depends_on:
       - mysql

@@ -44,9 +44,14 @@ credential:
 
 # docker commands
 compose:
+	docker network create --driver bridge common_link
 	doxker-compose up -d
 rebuild:
 	doxker-compose up -d --build
+network:
+	docker network ls
+gen_network:
+	docker network create --driver bridge common_link
 
 # SSL
 genkeys:
